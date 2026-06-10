@@ -1,0 +1,16 @@
+kind: decision-report
+intake_id: MjMxDUPLICATE
+status: skip_duplicate
+source: flomo
+source_id: MjMxDUPLICATE
+timestamp: 2026-04-16 09:42
+raw_link: https://flomoapp.com/...
+raw_text: 先写出对的感觉，不要一开始就卡在命名上。
+agent_read: Exact source_id and raw signal are already represented in the existing seed note, with no material delta.
+related_candidates:
+  - 20_Areas/25_Personal_Growth/Seeds/Seed_先写出对的感觉再找对的词.md
+why_not_fit:
+  - duplicate_without_material_delta
+suggested_next_decisions:
+  - report_skipped_duplicate
+write_blocked: true

@@ -22,7 +22,7 @@ Writing is allowed only when all of these are true:
 - The selected template fits the source density.
 - Duplicate and append candidates have been checked.
 - `write_blocked` is false.
-- The operation is either `create` or `append`; blocked decisions such as `no_fit`, `needs_human_decision`, and `skip_duplicate` must not mutate the vault.
+- The operation is `create`, `append`, or `split_new_note`; no-write decisions such as `skip_duplicate`, `no_fit`, and `needs_human_decision` must not mutate the vault.
 
 ## Reporting
 

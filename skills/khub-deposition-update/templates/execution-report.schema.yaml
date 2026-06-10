@@ -1,16 +1,38 @@
-kind: execution-report
+$schema: https://json-schema.org/draft/2020-12/schema
+title: KHub Execution Report
+type: object
+additionalProperties: true
 required:
+  - kind
   - intake_id
   - operation
   - result
   - target_note_path
   - template_id
+  - source_trace
   - write_attempted
-optional:
-  - fidelity_metrics
-allowed_results:
-  - added
-  - updated
-  - skipped
-  - blocked
-  - conflict
+properties:
+  kind:
+    const: execution-report
+  intake_id:
+    type: string
+    minLength: 1
+  operation:
+    type: string
+    enum: [create, append, split_new_note]
+  result:
+    type: string
+    enum: [added, updated, skipped, blocked, conflict]
+  target_note_path:
+    type: string
+    pattern: \.md$
+  template_id:
+    type: string
+    minLength: 1
+  source_trace:
+    type: object
+    required: [source, source_id]
+  write_attempted:
+    type: boolean
+  fidelity_metrics:
+    type: object

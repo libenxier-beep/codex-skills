@@ -20,7 +20,7 @@ skills/
   workflow-principles.md
 ```
 
-Each skill directory contains a `SKILL.md` entry point. Some skills also include contracts, templates, examples, references, and validation scripts.
+Each skill directory contains a `SKILL.md` entry point. Some skills also include contracts, templates, examples, references, validation scripts, and trigger evals.
 
 ## Install
 
@@ -37,6 +37,14 @@ Set `CODEX_HOME` to your local Codex configuration directory if it is not alread
 
 ## Validation
 
+Run the full package check:
+
+```bash
+bash scripts/run-golden-tests.sh
+```
+
+Or run individual validators:
+
 ```bash
 bash skills/khub-classifier-router/scripts/validate-route-plan.sh \
   skills/khub-classifier-router/examples/output-route-plan.create.yaml
@@ -47,6 +55,8 @@ bash skills/khub-deposition-update/scripts/validate-note-payload.sh \
 bash skills/khub-deposition-update/scripts/validate-execution-report.sh \
   skills/khub-deposition-update/examples/create-seed.md
 ```
+
+Review `skills/*/evals/trigger-prompts.csv` when changing skill names, descriptions, or activation boundaries.
 
 ## Sanitization
 

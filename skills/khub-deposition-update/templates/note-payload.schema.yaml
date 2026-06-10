@@ -1,5 +1,9 @@
-kind: note-payload
+$schema: https://json-schema.org/draft/2020-12/schema
+title: KHub Note Payload
+type: object
+additionalProperties: true
 required:
+  - kind
   - intake_id
   - operation
   - final_type
@@ -8,7 +12,30 @@ required:
   - target_note_path
   - frontmatter
   - sections
-allowed_operations:
-  - create
-  - append
-  - split_new_note
+properties:
+  kind:
+    const: note-payload
+  intake_id:
+    type: string
+    minLength: 1
+  operation:
+    type: string
+    enum: [create, append, split_new_note]
+  final_type:
+    type: string
+    enum: [seed, cognition, concept, viewpoint, playbook, prediction]
+  template_id:
+    type: string
+    minLength: 1
+  target_note_title:
+    type: string
+    minLength: 1
+  target_note_path:
+    type: string
+    pattern: \.md$
+  frontmatter:
+    type: object
+    required: [source, source_id]
+  sections:
+    type: object
+    minProperties: 1

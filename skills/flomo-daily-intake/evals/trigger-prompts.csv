@@ -1,0 +1,7 @@
+id,should_trigger,prompt,expected_evidence
+explicit-01,true,"Use flomo-daily-intake for yesterday's memos before KHub routing.","Resolves the day, reads Flomo, and produces a Markdown intake without routing."
+implicit-01,true,"Pull my Flomo notes from 2026-04-09 and keep raw text plus tags for review.","Produces standardized intake items with raw_text, tags, status, and memo references."
+contextual-01,true,"Before updating Obsidian, collect today's Flomo items and flag blank audio placeholders.","Stops at intake and marks unusable items explicitly."
+negative-01,false,"Classify this prepared intake item into a KHub note type and route it to an area.","Should use khub-classifier-router instead."
+negative-02,false,"Create the Obsidian note from this validated KHub route-plan.","Should use khub-deposition-update instead."
+edge-01,true,"Get Flomo notes for last 7 days, but if Flomo access is unavailable, tell me the blocker.","Stops with the access blocker instead of inventing notes."

@@ -1,0 +1,7 @@
+id,should_trigger,prompt,expected_evidence
+explicit-01,true,"Use khub-deposition-update to create the note from this validated route-plan.","Validates the route plan, builds note-payload, writes through Obsidian path, and returns execution-report."
+implicit-01,true,"Here is a KHub route-plan with write_blocked false; append the source material to the target note and report what changed.","Uses append policy, preserves trace, and returns execution-report."
+contextual-01,true,"The target note exists, but the append section is unclear. Do not guess.","Returns conflict with write_attempted false unless a write actually happened."
+negative-01,false,"Classify this raw Flomo memo into the right KHub area and template.","Should use flomo-daily-intake and/or khub-classifier-router first."
+negative-02,false,"This decision-report says needs_human_decision; turn it into a note anyway.","Must refuse; blocked decision must not trigger deposition."
+edge-01,true,"Run this route-plan, but Obsidian CLI access is unavailable.","Stops with the exact blocker and does not emulate success."

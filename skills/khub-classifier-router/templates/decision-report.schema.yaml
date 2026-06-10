@@ -1,17 +1,52 @@
-kind: decision-report
+$schema: https://json-schema.org/draft/2020-12/schema
+title: KHub Decision Report
+type: object
+additionalProperties: true
 required:
+  - kind
   - intake_id
   - status
   - source
   - source_id
   - timestamp
-  - raw_link
   - raw_text
   - agent_read
-  - best_candidates
-  - why_not_fit
   - suggested_next_decisions
   - write_blocked
-allowed_status:
-  - no_fit
-  - needs_human_decision
+properties:
+  kind:
+    const: decision-report
+  intake_id:
+    type: string
+    minLength: 1
+  status:
+    type: string
+    enum: [skip_duplicate, no_fit, needs_human_decision]
+  source:
+    type: string
+    minLength: 1
+  source_id:
+    type: string
+    minLength: 1
+  timestamp:
+    type: string
+    minLength: 1
+  raw_link:
+    type: string
+  raw_text:
+    type: string
+    minLength: 1
+  agent_read:
+    type: string
+    minLength: 1
+  best_candidates:
+    type: array
+  related_candidates:
+    type: array
+  why_not_fit:
+    type: array
+  suggested_next_decisions:
+    type: array
+    minItems: 1
+  write_blocked:
+    const: true

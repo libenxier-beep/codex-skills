@@ -19,7 +19,7 @@ The carrier may be Markdown, but the parsed record must expose the fields above.
 
 ## Output A: Route Plan
 
-Use this output only when the item is safe to write into KHub.
+Use this output only when the item is safe to mutate KHub through downstream deposition.
 
 ```yaml
 kind: route-plan
@@ -44,16 +44,15 @@ review_needed: false
 write_blocked: false
 ```
 
-### Allowed Operations
+### Allowed Mutating Operations
 
 - `create`
 - `append`
-- `skip_duplicate`
 - `split_new_note`
 
 ## Output B: Decision Report
 
-Use this output when the workflow must stop and wait for a decision in the current Codex conversation.
+Use this output when the workflow must stop, report a no-write outcome, or wait for a decision in the current Codex conversation.
 
 ```yaml
 kind: decision-report
@@ -97,6 +96,7 @@ write_blocked: true
 ## Hard Boundary
 
 - `no_fit` and `needs_human_decision` must never be converted into a route plan automatically.
+- `skip_duplicate` is a resolved no-write state; report it and do not invoke deposition.
 - `write_blocked: true` means downstream execution must stop.
 - This skill must never write Obsidian content directly.
 

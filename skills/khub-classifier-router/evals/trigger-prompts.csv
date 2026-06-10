@@ -1,0 +1,7 @@
+id,should_trigger,prompt,expected_evidence
+explicit-01,true,"Use khub-classifier-router on this Flomo intake and decide create vs append.","Emits one route-plan or decision-report per item without writing Obsidian notes."
+implicit-01,true,"This intake item might be a seed or cognition; decide KHub type, area, template, and whether it is safe to write.","Loads taxonomy, area routing, fit checks, and emits the correct decision artifact."
+contextual-01,true,"I have a memo that may duplicate an existing Personal Growth note; check whether to append, split, or skip.","Uses dedupe policy and write gating before deposition."
+negative-01,false,"Pull yesterday's raw Flomo notes and keep timestamps and raw text.","Should use flomo-daily-intake instead."
+negative-02,false,"This route-plan is validated; create the Obsidian note and report the result.","Should use khub-deposition-update instead."
+edge-01,true,"The item fits two areas equally and the template would distort the source.","Returns decision-report with write_blocked: true."
