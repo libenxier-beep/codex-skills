@@ -1,0 +1,16 @@
+kind: route-plan
+intake_id: bad-confidence
+source: flomo
+source_id: bad-confidence
+timestamp: 2026-04-14 12:48
+normalized_title: Bad confidence
+final_type: seed
+target_area: 25_Personal_Growth
+target_bucket: Seeds
+template_id: TP_Seed_认知半成品
+operation: create
+target_note_title: Seed_Bad confidence
+target_note_path: 20_Areas/25_Personal_Growth/Seeds/Seed_Bad confidence.md
+confidence: 1.2
+review_needed: false
+write_blocked: false

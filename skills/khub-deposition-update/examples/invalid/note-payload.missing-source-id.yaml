@@ -1,0 +1,11 @@
+kind: note-payload
+intake_id: missing-source-id
+operation: create
+final_type: seed
+template_id: TP_Seed_认知半成品
+target_note_title: Seed_Missing source
+target_note_path: 20_Areas/25_Personal_Growth/Seeds/Seed_Missing source.md
+frontmatter:
+  source: flomo
+sections:
+  raw_signal: Missing source_id should fail.

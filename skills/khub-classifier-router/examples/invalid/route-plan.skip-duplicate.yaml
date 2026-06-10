@@ -1,0 +1,16 @@
+kind: route-plan
+intake_id: skip-duplicate-route
+source: flomo
+source_id: skip-duplicate-route
+timestamp: 2026-04-14 12:48
+normalized_title: Duplicate should not route
+final_type: seed
+target_area: 25_Personal_Growth
+target_bucket: Seeds
+template_id: TP_Seed_认知半成品
+operation: skip_duplicate
+target_note_title: Seed_Duplicate should not route
+target_note_path: 20_Areas/25_Personal_Growth/Seeds/Seed_Duplicate should not route.md
+confidence: 0.99
+review_needed: false
+write_blocked: false

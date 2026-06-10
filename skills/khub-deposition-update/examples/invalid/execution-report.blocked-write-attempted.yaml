@@ -1,0 +1,10 @@
+kind: execution-report
+intake_id: blocked-write-attempted
+operation: append
+result: blocked
+target_note_path: 20_Areas/25_Personal_Growth/Cognitions/Cognition_Blocked.md
+template_id: TP_Cognition_认知框架
+source_trace:
+  source: flomo
+  source_id: blocked-write-attempted
+write_attempted: true

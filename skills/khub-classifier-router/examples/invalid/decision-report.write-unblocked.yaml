@@ -1,0 +1,11 @@
+kind: decision-report
+intake_id: unblocked-decision
+status: no_fit
+source: flomo
+source_id: unblocked-decision
+timestamp: 2026-04-14 12:48
+raw_text: This decision should stay blocked.
+agent_read: The item has no safe fit.
+suggested_next_decisions:
+  - skip_for_now
+write_blocked: false

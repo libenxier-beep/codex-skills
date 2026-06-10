@@ -43,6 +43,8 @@ Run the full package check:
 bash scripts/run-golden-tests.sh
 ```
 
+This command validates positive examples, negative examples, schema parseability, shell entrypoints, line endings, trigger eval CSVs, and Markdown links.
+
 Or run individual validators:
 
 ```bash

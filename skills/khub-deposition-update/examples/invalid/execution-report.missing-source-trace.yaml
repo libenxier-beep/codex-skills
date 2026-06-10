@@ -1,0 +1,7 @@
+kind: execution-report
+intake_id: missing-source-trace
+operation: create
+result: added
+target_note_path: 20_Areas/25_Personal_Growth/Seeds/Seed_Missing trace.md
+template_id: TP_Seed_认知半成品
+write_attempted: true
