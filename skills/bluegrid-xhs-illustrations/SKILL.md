@@ -26,6 +26,9 @@ description: 生成“小蓝格”耳机 IP 风格的小红书中文配图。用
 - `references/composition-patterns.md`：构图类型、原创隐喻方法和反复刻规则。
 - `references/prompt-template.md`：单张生图提示词模板。
 - `references/qa-checklist.md`：生成后检查和迭代规则。
+- `examples/`：需要校准从输入到 shot list、prompt、修图提示的完整链路时读取。
+- `evals/visual-rubric.md`：需要评审生成图质量或做回归评测时读取。
+- `evals/golden-prompts.csv`：需要跑提示词级回归或扩展样例时读取。
 
 ## 工作流
 
@@ -58,6 +61,15 @@ description: 生成“小蓝格”耳机 IP 风格的小红书中文配图。用
 
 如果用户明确要求“生成 / 输出 / 做图 / 帮我画 / 直接出图”，不要停下来等确认；用内置 `image_gen` 每张单独生成。不要把多张图拼成一张。
 
+如果当前运行时没有图像生成工具，不要声称已经生成图片。改为输出：
+
+1. shot list
+2. 每张图一条可复制的生图提示词
+3. QA 检查清单
+4. 建议文件名
+
+如果工具可用但失败，说明失败步骤和下一步选择，再给出同样的可复制提示词包。
+
 每张图只讲一个核心结构。提示词必须包含：
 
 - 小红书 4:5 竖版或用户指定比例
@@ -81,6 +93,8 @@ description: 生成“小蓝格”耳机 IP 风格的小红书中文配图。用
 - 中文太多、错字严重或像大标题
 - 风格太可爱、幼稚、商业、科技感
 - 背景不是干净白底
+
+需要正式评审时，使用 `evals/visual-rubric.md` 对每张图逐项打分。低于 8/10 的图不能作为最终交付；先按 rubric 的失败项重写提示词或局部编辑。
 
 ### 5. 保存交付
 
@@ -110,3 +124,11 @@ assets/<topic-slug>-bluegrid-illustrations/
 
 不要长篇解释风格理论；让图自己说话。
 
+## 评测与样例
+
+维护或升级这个 skill 时，至少检查：
+
+- `evals/trigger-prompts.csv`：触发和负例是否仍然准确。
+- `evals/golden-prompts.csv`：代表性任务是否覆盖小红书首图、文章正文图、修图、失败修复和无图像工具降级。
+- `examples/`：输入、shot list、最终 prompt、合格标准和失败修复是否能被新读者复现。
+- `evals/visual-rubric.md`：当前图像输出是否仍符合小蓝格 IP、清新蓝、留白和非 PPT 感。

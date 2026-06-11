@@ -65,6 +65,20 @@ for csv_path in root.glob("skills/*/evals/trigger-prompts.csv"):
         if row.get("should_trigger") not in {"true", "false"}:
             errors.append(f"{csv_path}: invalid should_trigger in {row.get('id')}")
 
+for csv_path in root.glob("skills/*/evals/golden-prompts.csv"):
+    with csv_path.open(newline="", encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    expected_header = ["id", "mode", "prompt", "expected_read", "expected_output", "rubric_focus"]
+    if not rows or list(rows[0].keys()) != expected_header:
+        errors.append(f"{csv_path}: bad golden prompt header")
+    for row in rows:
+        if not row.get("prompt") or not row.get("expected_output"):
+            errors.append(f"{csv_path}: incomplete golden prompt row {row.get('id')}")
+        for rel in row.get("expected_read", "").split(";"):
+            rel = rel.strip()
+            if rel and not (csv_path.parents[1] / rel).exists():
+                errors.append(f"{csv_path}: missing expected_read target {rel} in {row.get('id')}")
+
 for md in root.glob("skills/*/SKILL.md"):
     text = md.read_text(encoding="utf-8")
     for link in re.findall(r"\[[^\]]+\]\(([^)]+)\)", text):
