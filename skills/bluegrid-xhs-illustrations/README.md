@@ -6,7 +6,7 @@
 
 ## Example Gallery
 
-这些图片来自 Obsidian 自媒体库里的真实小红书卡片项目，用作风格校准样例。它们展示“小蓝格耳机 IP”在同一组选题下的稳定性：清新蓝、手绘线稿、少量橙色路径、红色纠偏、白底留白和低科技隐喻。
+这些图片来自一组真实小红书卡片项目，用作风格校准样例。它们展示“小蓝格耳机 IP”在同一组选题下的稳定性：清新蓝、手绘线稿、少量橙色路径、红色纠偏、白底留白和低科技隐喻。
 
 ![小蓝格样图总览](examples/images/contact-sheet.png)
 
@@ -71,11 +71,16 @@ Repair a weak image:
 
 See [examples/prompts.md](examples/prompts.md) for reusable prompts based on the real example images.
 
+## Consistency Lock
+
+For production generation, read [references/style-lock.md](references/style-lock.md) and use the first-generation source anchors in [assets/style-anchors/](assets/style-anchors/) before writing the final prompt. The public gallery is for browsing; the style anchors are the stricter reference set for preventing cute-character drift.
+
 ## Evaluation
 
 - [evals/trigger-prompts.csv](evals/trigger-prompts.csv): trigger and non-trigger coverage.
 - [evals/golden-prompts.csv](evals/golden-prompts.csv): representative prompt-level regression cases.
 - [evals/visual-rubric.md](evals/visual-rubric.md): ten-point visual quality rubric.
+- [assets/style-anchors/](assets/style-anchors/): first-generation source anchors for style consistency.
 - [examples/images/](examples/images/): real image baselines for style calibration.
 
 Images below 8/10 on the visual rubric should not be used as final outputs without repair.

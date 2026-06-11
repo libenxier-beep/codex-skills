@@ -10,6 +10,9 @@ Generate one standalone 4:5 vertical Xiaohongshu Chinese note illustration.
 Visual DNA:
 Pure white background. Minimalist black hand-drawn line art. Slightly wobbly pen lines. Lots of empty white space. Fresh sky-blue accent blocks. Sparse orange path marks, red correction marks, and deep-blue handwritten notes only when needed. Clean creator-tool sketch feeling. No gradients, no shadows, no paper texture, no complex background, no commercial vector style, no PPT infographic look, no cute mascot poster, no children's illustration, no realistic UI.
 
+Style lock:
+Match the Bluegrid anchor set. 小蓝格 is a sky-blue rounded-square content-system operator with subtle light-blue hand-painted fill, tiny black dot eyes, thin black line arms and legs, and simple deep-blue thin-line over-ear headphones. The body is softly square, slightly uneven, and adult, not a cute blob, not a robot, not an app icon, not a mascot sticker. Use black hand-drawn pen lines, light blue fills, deep-blue headphone accents, sparse orange movement paths, tiny red correction marks only when needed, and large clean white space. Keep the composition like a quiet hand-drawn creator-system sketch: low-tech physical objects, gentle line hatching, simple labels, no glossy vector polish, no chibi proportions, no big smile, no oversized eyes, no cartoon poster mood.
+
 Recurring IP character required:
 小蓝格, a small sky-blue rounded-square character with tiny black dot eyes, thin line arms and legs, blank serious expression, slightly uneven hand-drawn body shape. 小蓝格 wears a simple thin-line deep-blue over-ear headphone as its fixed signature accessory. The headphone must be visible but minimal, with no microphone boom and no bulky details. 小蓝格 must perform the core conceptual action, not decorate the scene. Make 小蓝格 calm, useful, and slightly dry-humored, not cute.
 
@@ -80,4 +83,3 @@ Regenerate this illustration with the same core meaning and simple layout, but m
 ```text
 Regenerate with fewer nodes and fewer arrows. Replace the formal diagram with one low-tech object or physical action. Keep 小蓝格 doing the action, preserve lots of white space, and use only short handwritten Chinese labels.
 ```
-

@@ -6,3 +6,4 @@ bad-ppt-fix,repair,examples/04-bad-ppt-style-and-fix.md,SKILL.md,diagnosis+repai
 remove-title-edit,edit,examples/05-remove-title-edit.md,SKILL.md,targeted-edit-prompt,只删目标文字
 no-image-tool,fallback,examples/prompts.md,evals/visual-rubric.md,shot-list+copyable-prompts,不声称已生成
 real-image-baseline,review,examples/images/contact-sheet.png,examples/prompts.md,calibration+new-prompt,参考但不复刻
+style-drift-repair,repair,references/style-lock.md,assets/style-anchors/01-cover-anchor.png,drift-repair-prompt,防止可爱漂移

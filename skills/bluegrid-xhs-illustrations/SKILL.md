@@ -23,11 +23,13 @@ description: 生成“小蓝格”耳机 IP 风格的小红书中文配图。用
 
 - `references/style-dna.md`：风格 DNA、比例、颜色、文字和禁忌。
 - `references/bluegrid-ip.md`：小蓝格 IP 外形、性格、配件、动作库和禁忌。
+- `references/style-lock.md`：生成一致性锁定规则、风格锚点和漂移修复方法；直接生成前必须读取。
 - `references/composition-patterns.md`：构图类型、原创隐喻方法和反复刻规则。
 - `references/prompt-template.md`：单张生图提示词模板。
 - `references/qa-checklist.md`：生成后检查和迭代规则。
 - `examples/`：需要校准从输入到 shot list、prompt、修图提示的完整链路时读取。
-- `examples/images/`：真实小蓝格样图资产，用于视觉校准和公开展示；不要机械复刻构图。
+- `assets/style-anchors/`：第一批稳定小蓝格源图，用作生成前风格锚点。
+- `examples/images/`：真实小蓝格成品样图，用于视觉校准和公开展示；不要机械复刻构图。
 - `examples/prompts.md`：真实样图对应的可复制 prompt 模式和 prompt pack。
 - `evals/visual-rubric.md`：需要评审生成图质量或做回归评测时读取。
 - `evals/golden-prompts.csv`：需要跑提示词级回归或扩展样例时读取。
@@ -61,7 +63,7 @@ description: 生成“小蓝格”耳机 IP 风格的小红书中文配图。用
 
 ### 3. 单张生成
 
-如果用户明确要求“生成 / 输出 / 做图 / 帮我画 / 直接出图”，不要停下来等确认；用内置 `image_gen` 每张单独生成。不要把多张图拼成一张。
+如果用户明确要求“生成 / 输出 / 做图 / 帮我画 / 直接出图”，不要停下来等确认。先读取 `references/style-lock.md`，选择 1-3 张 `assets/style-anchors/` 里的锚点做风格校准，再用内置 `image_gen` 每张单独生成。不要把多张图拼成一张。
 
 如果当前运行时没有图像生成工具，不要声称已经生成图片。改为输出：
 
@@ -83,11 +85,13 @@ description: 生成“小蓝格”耳机 IP 风格的小红书中文配图。用
 - 大量留白
 - 小蓝格承担核心动作
 - 禁止 PPT、商业插画、幼稚可爱、复杂架构、左上角类型标题
+- 必须包含 `references/style-lock.md` 里的 Style Lock Block
 
 ### 4. 检查与迭代
 
 生成后检查 `references/qa-checklist.md`。如果出现以下问题，优先重生成或局部编辑：
 
+- 小蓝格外形漂移：变成可爱蓝色人偶、机器人、App icon、普通方块或儿童卡通
 - 小蓝格只是装饰
 - 耳机不明显或变成复杂耳麦
 - 画面太满
@@ -133,6 +137,7 @@ assets/<topic-slug>-bluegrid-illustrations/
 - `evals/trigger-prompts.csv`：触发和负例是否仍然准确。
 - `evals/golden-prompts.csv`：代表性任务是否覆盖小红书首图、文章正文图、修图、失败修复和无图像工具降级。
 - `examples/`：输入、shot list、最终 prompt、合格标准和失败修复是否能被新读者复现。
+- `assets/style-anchors/`：第一批稳定源图是否仍代表当前小蓝格外形和线条气质。
 - `examples/images/`：真实样图是否仍能代表当前小蓝格 IP 和小红书 4:5 场景。
 - `examples/prompts.md`：真实样图的 prompt pack 是否仍和 style DNA、IP 规则一致。
 - `evals/visual-rubric.md`：当前图像输出是否仍符合小蓝格 IP、清新蓝、留白和非 PPT 感。

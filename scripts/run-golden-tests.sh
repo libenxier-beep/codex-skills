@@ -101,6 +101,16 @@ for image_path in root.glob("skills/bluegrid-xhs-illustrations/examples/images/[
     if (width, height) != (1080, 1350):
         errors.append(f"{image_path}: expected 1080x1350, got {width}x{height}")
 
+for image_path in root.glob("skills/bluegrid-xhs-illustrations/assets/style-anchors/*.png"):
+    data = image_path.read_bytes()
+    if not data.startswith(b"\x89PNG\r\n\x1a\n"):
+        errors.append(f"{image_path}: not a PNG file")
+        continue
+    width = int.from_bytes(data[16:20], "big")
+    height = int.from_bytes(data[20:24], "big")
+    if width < 900 or height < 1200:
+        errors.append(f"{image_path}: style anchor too small: {width}x{height}")
+
 line_limited = [
     root / "scripts/run-golden-tests.sh",
     *root.glob("skills/bluegrid-xhs-illustrations/evals/*.csv"),

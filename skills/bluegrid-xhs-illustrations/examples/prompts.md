@@ -1,6 +1,6 @@
 # Prompt Examples
 
-These prompts are based on the real example image set in `examples/images/`. Use them as calibration patterns, not as layouts to copy exactly.
+These prompts are based on the real example image set in `examples/images/` and the stricter source anchors in `assets/style-anchors/`. Use them as calibration patterns, not as layouts to copy exactly.
 
 ## Shared Visual DNA
 
@@ -8,6 +8,14 @@ Use this block in every prompt unless the user specifies a different direction:
 
 ```text
 Pure white background. Minimalist black hand-drawn line art with slightly wobbly pen lines. Fresh sky-blue 小蓝格 character with tiny black dot eyes, thin line arms and legs, and visible simple deep-blue thin-line over-ear headphones. Sparse orange movement path, tiny red correction marks only when needed, and a few short blue handwritten Chinese labels. Lots of white space. Low-tech physical metaphor, not formal UI, not PPT, not commercial vector illustration, not cute mascot poster.
+```
+
+## Consistency Lock
+
+Use this before every image prompt:
+
+```text
+Use `references/style-lock.md`. Pick 1-3 images from `assets/style-anchors/` as style anchors. Keep 小蓝格's body shape, headphone design, line weight, blue fill, and quiet operator mood consistent with those anchors. Do not make 小蓝格 cuter than the anchors.
 ```
 
 ## 01 Cover: From Prompt Collecting To System Building
