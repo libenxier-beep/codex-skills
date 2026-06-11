@@ -79,13 +79,23 @@ for csv_path in root.glob("skills/*/evals/golden-prompts.csv"):
             if rel and not (csv_path.parents[1] / rel).exists():
                 errors.append(f"{csv_path}: missing expected_read target {rel} in {row.get('id')}")
 
-for md in root.glob("skills/*/SKILL.md"):
+for md in list(root.glob("skills/*/SKILL.md")) + list(root.glob("skills/*/README.md")) + list(root.glob("skills/*/examples/*.md")):
     text = md.read_text(encoding="utf-8")
     for link in re.findall(r"\[[^\]]+\]\(([^)]+)\)", text):
         if "://" in link or link.startswith("#"):
             continue
         if not (md.parent / link).resolve().exists():
             errors.append(f"{md}: broken link {link}")
+
+for image_path in root.glob("skills/bluegrid-xhs-illustrations/examples/images/[0-9][0-9]-*.png"):
+    data = image_path.read_bytes()
+    if not data.startswith(b"\x89PNG\r\n\x1a\n"):
+        errors.append(f"{image_path}: not a PNG file")
+        continue
+    width = int.from_bytes(data[16:20], "big")
+    height = int.from_bytes(data[20:24], "big")
+    if (width, height) != (1080, 1350):
+        errors.append(f"{image_path}: expected 1080x1350, got {width}x{height}")
 
 for schema_path in root.glob("skills/*/templates/*.schema.yaml"):
     with schema_path.open(encoding="utf-8") as f:

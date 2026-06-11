@@ -27,6 +27,8 @@ description: 生成“小蓝格”耳机 IP 风格的小红书中文配图。用
 - `references/prompt-template.md`：单张生图提示词模板。
 - `references/qa-checklist.md`：生成后检查和迭代规则。
 - `examples/`：需要校准从输入到 shot list、prompt、修图提示的完整链路时读取。
+- `examples/images/`：真实小蓝格样图资产，用于视觉校准和公开展示；不要机械复刻构图。
+- `examples/prompts.md`：真实样图对应的可复制 prompt 模式和 prompt pack。
 - `evals/visual-rubric.md`：需要评审生成图质量或做回归评测时读取。
 - `evals/golden-prompts.csv`：需要跑提示词级回归或扩展样例时读取。
 
@@ -131,4 +133,6 @@ assets/<topic-slug>-bluegrid-illustrations/
 - `evals/trigger-prompts.csv`：触发和负例是否仍然准确。
 - `evals/golden-prompts.csv`：代表性任务是否覆盖小红书首图、文章正文图、修图、失败修复和无图像工具降级。
 - `examples/`：输入、shot list、最终 prompt、合格标准和失败修复是否能被新读者复现。
+- `examples/images/`：真实样图是否仍能代表当前小蓝格 IP 和小红书 4:5 场景。
+- `examples/prompts.md`：真实样图的 prompt pack 是否仍和 style DNA、IP 规则一致。
 - `evals/visual-rubric.md`：当前图像输出是否仍符合小蓝格 IP、清新蓝、留白和非 PPT 感。
