@@ -1,0 +1,6 @@
+id,should_trigger,prompt,expected_evidence
+explicit-01,true,"Use github-engineering-pattern-knowledge to ingest these GitHub repos into my Work Contexts knowledge base.","Checks seed and learned registries before running seed ingestion."
+implicit-01,true,"The daily open-source learning archive says pending repos are not skipped correctly; fix the knowledge dashboard.","Inspects learned_repos.json, archive API output, and dashboard display."
+contextual-01,true,"Add retrieval tags and progressive disclosure to every engineering pattern note from the GitHub learning tool.","Updates pattern notes, regenerates indexes, and runs the harness."
+negative-01,false,"Review this pull request and tell me whether CI is failing.","Should use a GitHub PR or CI skill instead."
+negative-02,false,"Summarize the README of vercel/next.js once, but do not save anything.","Should not create or mutate the durable Work Contexts knowledge base."

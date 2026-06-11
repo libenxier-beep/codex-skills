@@ -5,6 +5,7 @@ Public Codex skill collection for reusable agent workflows.
 ## Skills
 
 - `flomo-daily-intake`: collect raw Flomo notes for a specific day or time range before routing or deposition.
+- `github-engineering-pattern-knowledge`: operate the local GitHub engineering-pattern knowledge base and dashboard.
 - `khub-classifier-router`: classify intake material and produce a route plan before writing KHub notes.
 - `khub-deposition-update`: create or append Obsidian KHub notes from validated route plans.
 
@@ -15,6 +16,7 @@ Shared workflow guidance lives in `skills/workflow-principles.md`.
 ```text
 skills/
   flomo-daily-intake/
+  github-engineering-pattern-knowledge/
   khub-classifier-router/
   khub-deposition-update/
   workflow-principles.md
@@ -29,6 +31,7 @@ Copy the desired skill directories into your Codex skills directory:
 ```bash
 mkdir -p "$CODEX_HOME/skills"
 cp -R skills/flomo-daily-intake "$CODEX_HOME/skills/"
+cp -R skills/github-engineering-pattern-knowledge "$CODEX_HOME/skills/"
 cp -R skills/khub-classifier-router "$CODEX_HOME/skills/"
 cp -R skills/khub-deposition-update "$CODEX_HOME/skills/"
 ```
