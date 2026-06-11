@@ -4,6 +4,7 @@ Public Codex skill collection for reusable agent workflows.
 
 ## Skills
 
+- `bluegrid-xhs-illustrations`: generate clean 小蓝格 headphone-IP Xiaohongshu illustrations and Chinese article visuals.
 - `flomo-daily-intake`: collect raw Flomo notes for a specific day or time range before routing or deposition.
 - `github-engineering-pattern-knowledge`: operate the local GitHub engineering-pattern knowledge base and dashboard.
 - `khub-classifier-router`: classify intake material and produce a route plan before writing KHub notes.
@@ -15,6 +16,7 @@ Shared workflow guidance lives in `skills/workflow-principles.md`.
 
 ```text
 skills/
+  bluegrid-xhs-illustrations/
   flomo-daily-intake/
   github-engineering-pattern-knowledge/
   khub-classifier-router/
@@ -30,6 +32,7 @@ Copy the desired skill directories into your Codex skills directory:
 
 ```bash
 mkdir -p "$CODEX_HOME/skills"
+cp -R skills/bluegrid-xhs-illustrations "$CODEX_HOME/skills/"
 cp -R skills/flomo-daily-intake "$CODEX_HOME/skills/"
 cp -R skills/github-engineering-pattern-knowledge "$CODEX_HOME/skills/"
 cp -R skills/khub-classifier-router "$CODEX_HOME/skills/"

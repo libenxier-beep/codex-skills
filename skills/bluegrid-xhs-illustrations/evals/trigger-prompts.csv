@@ -1,0 +1,9 @@
+id,should_trigger,prompt,expected_evidence
+explicit-01,true,"用 $bluegrid-xhs-illustrations 给这个选题生成一张小红书配图：把碎片灵感变成笔记","读取 SKILL.md；使用小蓝格耳机 IP；默认 4:5 小红书配图"
+implicit-01,true,"帮我按小蓝格耳机那个风格做一张小红书图文配图","触发小蓝格配图流程；读取 IP 和提示词模板"
+contextual-01,true,"这篇 Notion 文章想配几张清新蓝色手绘图，不要小黑，要那个戴耳机的小蓝格","触发并选择 16:9 正文图或先出 shot list"
+strategy-01,true,"这个小红书笔记怎么配图比较好，先别生成，给我 shot list","输出配图策略，不直接调用 image_gen"
+negative-01,false,"帮我设计一个正式公司 logo，蓝色方块加耳机","不触发；logo/品牌标志不是正文配图任务"
+negative-02,false,"把这张照片里的耳机换成蓝色","不触发；这是普通照片编辑，不是小蓝格配图"
+edge-01,true,"生成一张横版文章正文图，主题是 AI 工作流太复杂怎么办","触发；尊重横版要求；用小蓝格承担核心动作"
+

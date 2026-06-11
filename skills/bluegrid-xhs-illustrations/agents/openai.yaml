@@ -1,0 +1,8 @@
+interface:
+  display_name: "小蓝格小红书配图"
+  short_description: "生成小蓝格耳机IP风格的小红书中文配图与文章插图方案"
+  brand_color: "#4BA3FF"
+  default_prompt: "Use $bluegrid-xhs-illustrations to generate a clean 小蓝格 Xiaohongshu article illustration for my topic."
+
+policy:
+  allow_implicit_invocation: true
