@@ -1,6 +1,6 @@
-# Codex Skills
+# Codex Custom Skills
 
-Public Codex skill collection for reusable agent workflows.
+Public collection of custom-built Codex skills and reusable agent workflows.
 
 ## Skills
 
